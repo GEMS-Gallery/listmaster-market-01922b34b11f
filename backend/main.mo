@@ -12,6 +12,7 @@ actor {
     id: Nat;
     text: Text;
     completed: Bool;
+    itemType: Text;
   };
 
   // Stable variable to store the shopping list items
@@ -19,11 +20,12 @@ actor {
   stable var nextId : Nat = 0;
 
   // Function to add a new item to the shopping list
-  public func addItem(text: Text) : async Nat {
+  public func addItem(text: Text, itemType: Text) : async Nat {
     let newItem : ShoppingItem = {
       id = nextId;
       text = text;
       completed = false;
+      itemType = itemType;
     };
     shoppingList := Array.append(shoppingList, [newItem]);
     nextId += 1;
@@ -43,6 +45,7 @@ actor {
           id = item.id;
           text = item.text;
           completed = not item.completed;
+          itemType = item.itemType;
         };
       };
       item

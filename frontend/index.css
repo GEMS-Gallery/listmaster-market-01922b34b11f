@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    max-width: 500px;
+    max-width: 600px;
     margin: 30px auto;
     padding: 20px;
     background-color: #fff;
@@ -33,6 +33,13 @@ h1 {
     border-radius: 4px 0 0 4px;
 }
 
+#item-type {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-left: none;
+}
+
 #add-item-form button {
     padding: 10px 15px;
     background-color: #5cb85c;
@@ -47,12 +54,22 @@ h1 {
     background-color: #4cae4c;
 }
 
-#shopping-list {
+.type-section {
+    margin-bottom: 20px;
+}
+
+.type-section h2 {
+    color: #333;
+    border-bottom: 2px solid #5cb85c;
+    padding-bottom: 5px;
+}
+
+.type-section ul {
     list-style-type: none;
     padding: 0;
 }
 
-#shopping-list li {
+.type-section li {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -63,12 +80,12 @@ h1 {
     border-radius: 4px;
 }
 
-#shopping-list li span {
+.type-section li span {
     flex-grow: 1;
     margin-right: 10px;
 }
 
-#shopping-list li span.completed {
+.type-section li span.completed {
     text-decoration: line-through;
     color: #888;
 }
